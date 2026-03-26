@@ -71,7 +71,7 @@ function renderPokeballReveal(pokemonName) {
     setTimeout(() => {
       const { pokemon, abilityData, evolutionData } = pendingRevealData;
       renderPokemon(pokemon, abilityData, evolutionData);
-      statusText.textContent = "Consulta exitosa.";
+      statusText.textContent = "";
       statusText.className = "";
       pendingRevealData = null;
     }, 900);
@@ -159,8 +159,8 @@ async function searchPokemon() {
     };
 
     renderPokeballReveal(pokemon.name);
-    statusText.textContent = "Pokemon listo. Haz click en la pokebola.";
-    statusText.className = "loading";
+    statusText.textContent = "";
+    statusText.className = "";
   } catch (error) {
     statusText.textContent = error.message;
     statusText.className = "error";
